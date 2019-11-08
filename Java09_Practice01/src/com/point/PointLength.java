@@ -2,6 +2,8 @@ package com.point;
 
 import java.util.Scanner;
 
+// java.lang.Math 이용해서 점과 점 사이 거리 구하기
+
 public class PointLength {
 
 	public static void main(String[] args) {
@@ -17,7 +19,9 @@ public class PointLength {
 		int y = sc.nextInt();
 		
 		double len = Math.sqrt(Math.pow(x,2) + Math.pow(y, 2));
-		System.out.printf("(0,0)부터 (%d,%d)까지의 거리 : %f", x, y, len);
+		System.out.printf("(0,0)부터 (%d,%d)까지의 거리 : %.2f", x, y, len);
+		
+		System.out.println();
 	}
 
 }
