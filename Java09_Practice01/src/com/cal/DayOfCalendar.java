@@ -12,7 +12,8 @@ public class DayOfCalendar {
 	 * 3. 요일
 	 */
 
-	static int sum = 0;
+	static int sum = 0;	// 내꺼
+	static int sum2 = 0; // 선생님 코드
 	static int DateOfMonth[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 	public static void main(String[] args) {
@@ -28,10 +29,28 @@ public class DayOfCalendar {
 		System.out.println("일 : ");
 		int date = sc.nextInt();
 
-		System.out.println(day(year, month, date));
+		System.out.println(year + "년 " + month + "월 " + date + "일은 " + day(year, month, date) + "요일입니다.");
 		
+		
+		
+		// 선생님 코드
+		for(int i=1; i<year; i++) {
+			for(int j=1; j<=12; j++) {
+				sum2 += dates(i, j);
+			}
+		}
+		
+		for(int i=1; i<month-1; i++) {
+			sum2 += dates(year, i);
+		}
+		
+		sum2 += date;
+		
+		System.out.printf("%d년 %d월 %d일은 %s입니다.", year, month, date, dayMode(sum2));
 	}
+	
 
+	// 내꺼
 	public static String day(int year, int month, int date) {
 
 		for (int i = 1; i < year; i++) {
@@ -79,6 +98,82 @@ public class DayOfCalendar {
 
 		case 6:
 			return "토";
+		}
+
+		return "";
+	}
+	
+	
+	
+	// 선생님 코드
+	// 윤년 계산
+	public static boolean isLeapYear(int year) {
+		
+		boolean isLeap = false;
+		
+		if((year%4 == 0) && (year%100 !=0) || (year%400 == 0))
+			isLeap = true;
+		
+		return isLeap;
+	}
+	
+	// 일수 계산
+	public static int dates(int year, int month) {
+		int res = 0;
+		
+		if(isLeapYear(year)) {
+			
+			switch(month) {
+			case 1:	case 3:	case 5:	case 7:	case 8:	case 10: case 12:
+				res = 31;
+				break;
+				
+			case 4:	case 6:	case 9:	case 11:
+				res = 30;
+				break;
+				
+			case 2:
+				res = 29;
+				break;
+			}
+			
+		} else {
+			
+			if(month == 1 || month == 3 || month == 5 ||month == 7 ||month == 8 ||month == 10 ||month == 12) {
+				res = 31;
+			} else if(month == 4 || month == 6 || month == 9 || month == 11) {
+				res = 30;
+			} else if(month == 2) {
+				res = 28;
+			}
+		}
+		
+		return res;
+	}
+	
+	public static String dayMode(int date) {
+		
+		switch (date % 7) {
+		case 0:
+			return "일요일";
+
+		case 1:
+			return "월요일";
+
+		case 2:
+			return "화요일";
+
+		case 3:
+			return "수요일";
+
+		case 4:
+			return "목요일";
+
+		case 5:
+			return "금요일";
+
+		case 6:
+			return "토요일";
 		}
 
 		return "";

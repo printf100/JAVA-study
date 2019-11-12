@@ -19,6 +19,7 @@ public class MyCalendar {
 		System.out.println("월 : ");
 		int month = sc.nextInt();
 
+		System.out.println("\t\t[ " + year + "년 " + month + "월 ]");
 		calendar(year, month);
 	}
 
