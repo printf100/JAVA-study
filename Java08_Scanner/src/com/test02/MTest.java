@@ -27,9 +27,11 @@ public class MTest {
 		// (int) (Math.random() * (max - min + 1)) + min
 		int max = 10;
 		int min = 5;
-		int r = (int) (Math.random() * (max - min + 1)) + min;
+		int r1 = (int) (Math.random() * (max - min + 1)) + min; // 5 ~ 10
+		int r2 = (int) (Math.random() * 5 + 1); // 1 ~ 5
 		
-		System.out.println(r);
+		System.out.println(r1);
+		System.out.println(r2);
 	}
 	
 	
