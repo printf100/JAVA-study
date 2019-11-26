@@ -9,9 +9,10 @@ public class Ball {
 		size = 3;
 		goal = new int[size];
 	}
-
+	
+	
 	public int[] getGoal() {
-
+		
 		while (true) {
 
 			try {
@@ -35,7 +36,7 @@ public class Ball {
 				e.printStackTrace();
 			}
 		}
-
+		
 		return goal;
 	}
 }
