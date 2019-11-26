@@ -30,9 +30,11 @@ public class MTest01 {
 		int c[] = { 11, 12, 13, 14, 15, 16, 17 };
 		
 		prn(c);
+		System.out.println();
 		
 		// 배열 원소들 출력
 		System.out.println(Arrays.toString(c));
+		System.out.println();
 		
 		String s[] = new String[] {"have", "a", "nice", "day"};
 		test(s);

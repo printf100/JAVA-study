@@ -32,9 +32,13 @@ public class MTest02 {
 		int[][] d = { { 1, 2, 3 }, { 4, 5, 6, 7, 8 }, { 9 }, { 10, 11 } };
 
 		System.out.println(d); // 주소값이 출력됨
+		System.out.println();
+		
 		prn(d);
+		System.out.println();
+		
 		System.out.println(Arrays.deepToString(d)); // 어휴,,, 이런 기능이,,, ;;;;
-
+		System.out.println();
 		
 		String[][] s = { { "have", "a", "nice", "day" }, { "너무", "어려워" }, { "배열", "2차원 배열" } };
 		test(s);
