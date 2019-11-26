@@ -23,7 +23,7 @@ public class Game extends Print {
 
 			isMine = input(inputArr[1], inputArr[0]);
 
-		} while (isMine.equals("*"));
+		} while (!isMine.equals("*"));
 
 		System.out.println(BYE);
 	}
